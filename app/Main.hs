@@ -16,8 +16,8 @@ main :: IO ()
 main = mapM_ putStrLn
     [ "expr1: " ++ show expr1
     , "expr2: " ++ show expr2
-    , "stringify expr1: " ++ expr1Str
-    , "stringify expr2: " ++ expr2Str
+    , "stringify expr1: " ++ show expr1Str
+    , "stringify expr2: " ++ show expr2Str
     , "parse . stringify $ expr1: " ++ show (parse expr1Str :: Either String (RPN Double ()))
     , "parse . stringify $ expr2: " ++ show (parse expr2Str :: Either String (RPN Double ()))
     , "eval expr1: " ++ show (eval expr1)
