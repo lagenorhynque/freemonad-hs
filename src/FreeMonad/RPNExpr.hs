@@ -66,23 +66,3 @@ eval = calc []
     calc (n:_)      (Free End)          = Right n
     calc (n:_)      (Pure _)            = Right n
     calc _          _                   = Left "invalid expression"
-
--- example
-expr1 :: RPN Double ()
-expr1 = do
-    num 8
-    num 6
-    num 1
-    sub
-    mul
-
-expr2 :: RPN Double ()
-expr2 = do
-    num 2
-    add
-    end
-
-value :: Either String Double
-value = do
-    expr <- parse . stringify $ expr1 >> expr2
-    eval expr

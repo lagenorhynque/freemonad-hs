@@ -15,8 +15,7 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  exposed-modules:     Lib
-                     , FreeMonad.Example
+  exposed-modules:     FreeMonad.Example
                      , FreeMonad.RPNExpr
   build-depends:       base >= 4.7 && < 5
                      , free >= 4.12.4
