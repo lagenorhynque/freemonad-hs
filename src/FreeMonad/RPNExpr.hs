@@ -17,10 +17,10 @@ instance Functor (RPNExpr n) where
     fmap f (Mul expr)      = Mul $ f expr
     fmap _ End             = End
 
+type RPN a b = Free (RPNExpr a) b
+
 liftF :: (Functor f) => f r -> Free f r
 liftF = Free . fmap Pure
-
-type RPN a b = Free (RPNExpr a) b
 
 num :: a -> RPN a ()
 num n = liftF $ Number n ()
